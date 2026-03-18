@@ -334,10 +334,10 @@ const TRENDING = [
 
 function FlavorSelector({ value, onChange }) {
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 p-1 rounded-2xl" style={{ background: "var(--chip-bg)" }}>
       {FLAVOR_LEVELS.map(f => (
-        <button key={f.id} className="flex-1 py-2 px-2 rounded-xl text-xs font-bold text-center transition-all" onClick={() => onChange(f.id)}
-          style={{ background: value === f.id ? f.color : "var(--chip-bg)", color: value === f.id ? "#fff" : "var(--text-secondary)", border: `1.5px solid ${value === f.id ? f.color : "var(--border)"}`, transform: value === f.id ? "scale(1.03)" : "scale(1)" }}>
+        <button key={f.id} className="flex-1 py-2.5 px-2 rounded-xl text-xs font-bold text-center transition-all" onClick={() => onChange(f.id)}
+          style={{ background: value === f.id ? f.color : "transparent", color: value === f.id ? "#fff" : "var(--text-muted)", boxShadow: value === f.id ? "0 2px 8px rgba(0,0,0,0.1)" : "none" }}>
           {f.label}
         </button>
       ))}
@@ -350,7 +350,7 @@ function NewsCard({ topic, flavor, onFlavorChange, onBookmark, isBookmarked }) {
   const [takOpen, setTakOpen] = useState(false);
   const fl = topic.flavors[flavor];
   return (
-    <div className="rounded-2xl overflow-hidden transition-all" style={{ background: "var(--card-bg)", border: "1px solid var(--border)" }}>
+    <div className="rounded-2xl overflow-hidden transition-all" style={{ background: "var(--card-bg)", boxShadow: "var(--card-shadow)", border: "none" }}>
       <div className="p-5">
         <div className="flex items-center gap-2 mb-3">
           <span className="px-2 py-0.5 rounded-md text-[10px] font-bold text-white" style={{ background: topic.badgeColor }}>{topic.badge}</span>
@@ -380,11 +380,9 @@ function NewsCard({ topic, flavor, onFlavorChange, onBookmark, isBookmarked }) {
         </div>
 
         {/* 꼬꼬무 더보기 CTA */}
-        <button className="w-full mt-3 py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all"
-          style={{ background: expanded ? "var(--chip-bg)" : "linear-gradient(135deg, rgba(212,69,59,0.08), rgba(212,69,59,0.15))", color: "var(--accent)", border: "1.5px dashed var(--accent)" }}
-          onClick={() => setExpanded(!expanded)}
-          onMouseEnter={e => { if(!expanded) e.currentTarget.style.background = "linear-gradient(135deg, rgba(212,69,59,0.12), rgba(212,69,59,0.22))" }}
-          onMouseLeave={e => { if(!expanded) e.currentTarget.style.background = "linear-gradient(135deg, rgba(212,69,59,0.08), rgba(212,69,59,0.15))" }}>
+        <button className={`w-full mt-4 py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2 transition-all ${expanded ? "" : "kkokkomu-btn"}`}
+          style={{ background: expanded ? "var(--chip-bg)" : undefined, color: expanded ? "var(--accent)" : "#fff", boxShadow: expanded ? "none" : "0 4px 14px var(--accent-shadow)" }}
+          onClick={() => setExpanded(!expanded)}>
           {expanded ? "접기 ↑" : (<>꼬꼬무 더보기 <span style={{ fontSize: 13 }}>↓</span></>)}
         </button>
       </div>
@@ -461,14 +459,16 @@ function NewsCard({ topic, flavor, onFlavorChange, onBookmark, isBookmarked }) {
           )}
         </div>
       </div>
-      <div className="flex border-t" style={{ borderColor: "var(--border)" }}>
-        <button className="flex-1 py-3 text-sm font-medium flex items-center justify-center gap-1" style={{ color: isBookmarked ? "var(--accent)" : "var(--text-secondary)" }} onClick={() => onBookmark(topic)}>
-          {isBookmarked ? "❤️ 저장됨" : "🤍 저장"}
+      <div className="flex" style={{ borderTop: "1px solid var(--chip-bg)" }}>
+        <button className="flex-1 py-3 text-sm font-medium flex items-center justify-center gap-1.5" style={{ color: isBookmarked ? "var(--accent)" : "var(--text-secondary)" }} onClick={() => onBookmark(topic)}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M2.79726 4.80739C5.11177 2.39754 8.90702 2.39754 11.2215 4.80739L11.2224 4.80827L11.9872 5.60702L12.7529 4.80739C15.0674 2.39754 18.8626 2.39754 21.1772 4.80739L21.179 4.80935C23.5242 7.26774 23.1318 10.953 21.2363 13.4384L21.2351 13.44C19.3267 15.9292 17.1219 17.9359 15.4019 19.3169C14.5402 20.0088 13.796 20.547 13.2653 20.9135C12.9998 21.0968 12.7875 21.2373 12.6402 21.3328C12.5666 21.3805 12.5092 21.417 12.4695 21.442L12.4235 21.4708L12.4109 21.4786L12.4072 21.4809L12.406 21.4816C12.406 21.4816 12.4053 21.4821 11.9872 20.8C11.5813 21.4894 11.5809 21.4892 11.5809 21.4892L11.5792 21.4882L11.5754 21.4859L11.5621 21.478L11.5142 21.4491C11.4729 21.424 11.4132 21.3875 11.3368 21.3396C11.184 21.244 10.964 21.1033 10.6902 20.9197C10.1426 20.5527 9.37805 20.0137 8.50199 19.3205C6.75443 17.9378 4.54128 15.9246 2.72667 13.423L2.72566 13.4216C0.930009 10.935 0.438148 7.26368 2.79726 4.80739ZM11.9872 20.8L11.5809 21.4892C11.8358 21.6393 12.1538 21.6362 12.406 21.4816L11.9872 20.8ZM11.9794 19.8524C12.0866 19.7811 12.2129 19.6958 12.3562 19.5968C12.8601 19.2489 13.5728 18.7336 14.4002 18.0693C16.058 16.7382 18.1594 14.8219 19.9646 12.4675C21.5249 10.421 21.6753 7.64872 20.0223 5.91478C18.3375 4.16154 15.5917 4.16174 13.9071 5.91539L12.565 7.31704C12.4141 7.47464 12.2054 7.56376 11.9872 7.56376C11.769 7.56376 11.5603 7.47464 11.4094 7.31704L10.0676 5.91571C8.38268 4.16167 5.63602 4.16151 3.95122 5.91571C2.31111 7.62338 2.50465 10.382 4.02235 12.4843C5.72139 14.8264 7.81446 16.7363 9.49477 18.0658C10.3327 18.7288 11.0626 19.2432 11.5809 19.5906C11.7329 19.6925 11.8666 19.7799 11.9794 19.8524Z" fill="currentColor"/></svg>
+          {isBookmarked ? "저장됨" : "저장"}
         </button>
-        <div style={{ width: 1, background: "var(--border)" }} />
-        <button className="flex-1 py-3 text-sm font-medium flex items-center justify-center gap-1" style={{ color: "var(--text-secondary)" }}
+        <div style={{ width: 1, background: "var(--chip-bg)" }} />
+        <button className="flex-1 py-3 text-sm font-medium flex items-center justify-center gap-1.5" style={{ color: "var(--text-secondary)" }}
           onClick={() => { const fl2 = topic.flavors[flavor]; navigator.clipboard?.writeText(`[LeTalk] ${topic.title}\n\n${fl2.starter}\n\n${fl2.context}\n\n🔗 ${topic.followUp.join(" / ")}`); }}>
-          📋 공유
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M15.2002 5.49995C15.2002 3.67741 16.6777 2.19995 18.5002 2.19995C20.3227 2.19995 21.8002 3.67741 21.8002 5.49995C21.8002 7.32249 20.3227 8.79995 18.5002 8.79995C17.5813 8.79995 16.7502 8.42439 16.1518 7.8184L8.76439 11.5121C8.78798 11.6713 8.8002 11.8342 8.8002 12C8.8002 12.1657 8.78798 12.3286 8.76439 12.4878L16.1518 16.1815C16.7502 15.5755 17.5813 15.2 18.5002 15.2C20.3227 15.2 21.8002 16.6774 21.8002 18.5C21.8002 20.3225 20.3227 21.7999 18.5002 21.7999C16.6777 21.7999 15.2002 20.3225 15.2002 18.5C15.2002 18.1742 15.2474 17.8594 15.3354 17.5621L8.14877 13.9688C7.54724 14.7767 6.58483 15.3 5.5002 15.3C3.67766 15.3 2.2002 13.8225 2.2002 12C2.2002 10.1774 3.67766 8.69995 5.5002 8.69995C6.58482 8.69995 7.54724 9.22322 8.14876 10.0311L15.3354 6.43778C15.2474 6.14051 15.2002 5.82574 15.2002 5.49995ZM18.5002 3.79995C17.5613 3.79995 16.8002 4.56107 16.8002 5.49995C16.8002 6.43884 17.5613 7.19995 18.5002 7.19995C19.4391 7.19995 20.2002 6.43884 20.2002 5.49995C20.2002 4.56107 19.4391 3.79995 18.5002 3.79995ZM18.5002 16.8C17.5613 16.8 16.8002 17.5611 16.8002 18.5C16.8002 19.4388 17.5613 20.2 18.5002 20.2C19.4391 20.2 20.2002 19.4388 20.2002 18.5C20.2002 17.5611 19.4391 16.8 18.5002 16.8ZM3.8002 12C3.8002 11.0611 4.56131 10.3 5.5002 10.3C6.43908 10.3 7.2002 11.0611 7.2002 12C7.2002 12.9388 6.43908 13.7 5.5002 13.7C4.56131 13.7 3.8002 12.9388 3.8002 12Z" fill="currentColor"/></svg>
+          공유
         </button>
       </div>
     </div>
@@ -498,7 +498,6 @@ export default function LeTalk() {
   const [bookmarks, setBookmarks] = useState([]);
   const [newsFilter, setNewsFilter] = useState("all");
   const [flavorMap, setFlavorMap] = useState({});
-  const [glossaryOpen, setGlossaryOpen] = useState(false);
 
   const getFlavor = (id) => flavorMap[id] || "mild";
   const setFlavor = (id, f) => setFlavorMap(prev => ({ ...prev, [id]: f }));
@@ -514,67 +513,73 @@ export default function LeTalk() {
     "--text-muted": "#58586e", "--accent": "#ff6b6b", "--accent-light": "#ff8e8e",
     "--accent-shadow": "rgba(255,107,107,0.2)", "--border": "#252538", "--chip-bg": "#1c1c2c",
     "--tip-bg": "rgba(255,107,107,0.05)", "--nav-bg": "rgba(12,12,18,0.95)",
+    "--card-shadow": "none",
   } : {
-    "--bg": "#f8f7f4", "--card-bg": "#ffffff", "--text": "#1a1a2e", "--text-secondary": "#5a5a72",
-    "--text-muted": "#9a9aae", "--accent": "#d4453b", "--accent-light": "#e8685e",
-    "--accent-shadow": "rgba(212,69,59,0.15)", "--border": "#e8e6e2", "--chip-bg": "#f2f0ec",
-    "--tip-bg": "rgba(212,69,59,0.03)", "--nav-bg": "rgba(248,247,244,0.95)",
+    "--bg": "#f4f5f7", "--card-bg": "#ffffff", "--text": "#191f28", "--text-secondary": "#4e5968",
+    "--text-muted": "#8b95a1", "--accent": "#d4453b", "--accent-light": "#e8685e",
+    "--accent-shadow": "rgba(212,69,59,0.12)", "--border": "#f2f3f5", "--chip-bg": "#f2f3f5",
+    "--tip-bg": "rgba(212,69,59,0.03)", "--nav-bg": "rgba(255,255,255,0.97)",
+    "--card-shadow": "0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02)",
   };
 
   return (
-    <div style={{ ...theme, background: "var(--bg)", minHeight: "100vh" }}>
+    <div style={{ ...theme, background: "var(--bg)", minHeight: "100vh", fontFamily: "'Pretendard', -apple-system, sans-serif" }}>
+      <style>{`
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        @keyframes slideUp { from { opacity:0; transform:translateY(16px) } to { opacity:1; transform:translateY(0) } }
+        @keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
+        @keyframes gradientFlow {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .kkokkomu-btn {
+          background: linear-gradient(270deg, #d4453b, #ff6b8a, #e8685e, #d4453b);
+          background-size: 300% 300%;
+          animation: gradientFlow 3s ease infinite;
+        }
+        .kkokkomu-btn:active { transform: scale(0.97); }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        button { cursor: pointer; border: none; background: none; font-family: inherit; }
+      `}</style>
+
       <div className="mx-auto" style={{ maxWidth: 440, paddingBottom: 80 }}>
 
         {/* HOME */}
         {screen === "home" && (
-          <div className="px-5 pt-8 pb-6" style={{ animation: "fadeIn 0.4s" }}>
+          <div className="px-5 pt-12 pb-6" style={{ animation: "fadeIn 0.4s" }}>
             {/* Header */}
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center justify-between mb-6">
               <div>
                 <h1 className="text-3xl font-black tracking-tight" style={{ color: "var(--text)" }}>
                   Le<span style={{ color: "var(--accent)" }}>Talk</span>
                 </h1>
-                <p className="text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>대화에 맛을 더하다</p>
+                <p className="text-sm mt-1" style={{ color: "var(--text-muted)" }}>대화의 맛을 더하다</p>
+                <p className="text-[10px] mt-1" style={{ color: "var(--text-muted)", opacity: 0.6 }}>제작자 : 이상현(le_sh7)</p>
               </div>
-              <div className="flex items-center gap-2">
-                <button className="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style={{ background: "var(--chip-bg)", border: "1px solid var(--border)" }} onClick={() => setGlossaryOpen(!glossaryOpen)}>📖</button>
-                <button className="w-8 h-8 rounded-lg flex items-center justify-center text-sm" style={{ background: "var(--chip-bg)", border: "1px solid var(--border)" }} onClick={() => setDarkMode(!darkMode)}>{darkMode ? "🌞" : "🌙"}</button>
-              </div>
+              <button className="flex items-center gap-2 px-4 py-2 rounded-full transition-all"
+                style={{ background: "var(--card-bg)", boxShadow: "0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06)", color: "var(--text-secondary)" }}
+                onClick={() => setDarkMode(!darkMode)}>
+                <span style={{ fontSize: 16 }}>{darkMode ? "🌞" : "🌙"}</span>
+                <span className="text-xs font-medium">{darkMode ? "라이트" : "다크"}</span>
+              </button>
             </div>
 
-            {/* Glossary Panel */}
-            {glossaryOpen && (
-              <div className="mb-4 p-4 rounded-2xl" style={{ background: "var(--card-bg)", border: "1.5px solid var(--accent)", animation: "fadeIn 0.2s" }}>
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-sm font-bold" style={{ color: "var(--text)" }}>📖 용어 사전</h3>
-                  <button className="text-xs" style={{ color: "var(--text-muted)" }} onClick={() => setGlossaryOpen(false)}>닫기 ✕</button>
-                </div>
-                <div className="space-y-2 max-h-64 overflow-y-auto" style={{ scrollbarWidth: "thin" }}>
-                  {Object.entries(GLOSSARY).map(([k, v]) => (
-                    <div key={k} className="p-2.5 rounded-lg" style={{ background: "var(--chip-bg)" }}>
-                      <p className="text-xs font-bold mb-0.5" style={{ color: "var(--accent)" }}>{k}</p>
-                      <p className="text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>{v}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
             {/* Concept Banner */}
-            <div className="p-4 rounded-2xl mb-5" style={{ background: "linear-gradient(135deg, var(--accent), var(--accent-light))", boxShadow: "0 4px 20px var(--accent-shadow)" }}>
-              <p className="text-white text-sm font-bold mb-1">🌶️ 대화의 맛을 골라보세요</p>
+            <div className="p-5 rounded-2xl mb-6" style={{ background: "linear-gradient(135deg, var(--accent), var(--accent-light))", boxShadow: "0 4px 16px var(--accent-shadow)" }}>
+              <p className="text-white text-base font-bold mb-1">대화의 맛을 골라보세요</p>
               <p className="text-white text-xs opacity-90 leading-relaxed">같은 뉴스도 순한맛·중간맛·매운맛으로 다르게 꺼낼 수 있어요. 상대방과의 관계, 분위기에 맞는 깊이를 선택하세요.</p>
             </div>
 
             {/* Filter */}
-            <div className="flex items-center justify-between mb-3">
-              <h2 className="text-sm font-bold" style={{ color: "var(--text)" }}>🔥 이번 주 대화 주제</h2>
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-lg font-bold" style={{ color: "var(--text)" }}>🔥 이번 주 대화 주제</h2>
               <span className="text-[10px] px-2 py-0.5 rounded-full" style={{ background: "var(--tip-bg)", color: "var(--accent)" }}>3/4 ~ 3/18</span>
             </div>
             <div className="flex gap-1.5 mb-4 overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
               {[{ id: "all", l: "전체" }, { id: "fun", l: "재미" }, { id: "economy", l: "경제" }, { id: "intl", l: "국제" }, { id: "tech", l: "기술" }, { id: "trend", l: "트렌드" }, { id: "society", l: "사회" }].map(f => (
-                <button key={f.id} className="px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap" onClick={() => setNewsFilter(f.id)}
-                  style={{ background: newsFilter === f.id ? "var(--accent)" : "var(--chip-bg)", color: newsFilter === f.id ? "#fff" : "var(--text-secondary)", border: `1px solid ${newsFilter === f.id ? "var(--accent)" : "var(--border)"}` }}>
+                <button key={f.id} className="px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all" onClick={() => setNewsFilter(f.id)}
+                  style={{ background: newsFilter === f.id ? "var(--accent)" : "var(--card-bg)", color: newsFilter === f.id ? "#fff" : "var(--text-muted)", boxShadow: newsFilter === f.id ? "0 2px 8px var(--accent-shadow)" : "var(--card-shadow)" }}>
                   {f.l}
                 </button>
               ))}
@@ -596,7 +601,7 @@ export default function LeTalk() {
         {screen === "bookmarks" && (
           <div className="px-5 pt-6 pb-8" style={{ animation: "fadeIn 0.3s" }}>
             <div className="flex items-center gap-3 mb-5">
-              <button className="w-9 h-9 rounded-xl flex items-center justify-center text-sm" style={{ background: "var(--chip-bg)", border: "1px solid var(--border)", color: "var(--text)" }} onClick={() => setScreen("home")}>←</button>
+              <button className="w-9 h-9 rounded-full flex items-center justify-center text-sm" style={{ background: "var(--chip-bg)", color: "var(--text)" }} onClick={() => setScreen("home")}>←</button>
               <h2 className="text-lg font-bold" style={{ color: "var(--text)" }}>❤️ 저장한 주제 ({bookmarks.length})</h2>
             </div>
             {bookmarks.length === 0 ? (
@@ -619,7 +624,7 @@ export default function LeTalk() {
         {screen === "glossary" && (
           <div className="px-5 pt-6 pb-8" style={{ animation: "fadeIn 0.3s" }}>
             <div className="flex items-center gap-3 mb-5">
-              <button className="w-9 h-9 rounded-xl flex items-center justify-center text-sm" style={{ background: "var(--chip-bg)", border: "1px solid var(--border)", color: "var(--text)" }} onClick={() => setScreen("home")}>←</button>
+              <button className="w-9 h-9 rounded-full flex items-center justify-center text-sm" style={{ background: "var(--chip-bg)", color: "var(--text)" }} onClick={() => setScreen("home")}>←</button>
               <h2 className="text-lg font-bold" style={{ color: "var(--text)" }}>📖 용어 사전</h2>
             </div>
             <p className="text-sm mb-4" style={{ color: "var(--text-secondary)" }}>대화에서 나올 수 있는 어려운 용어들을 미리 알아두세요.</p>
@@ -636,7 +641,7 @@ export default function LeTalk() {
       </div>
 
       {/* Nav */}
-      <div className="fixed bottom-0 left-0 right-0 flex justify-center" style={{ background: "var(--nav-bg)", backdropFilter: "blur(20px)", borderTop: "1px solid var(--border)", zIndex: 50 }}>
+      <div className="fixed bottom-0 left-0 right-0 flex justify-center" style={{ background: "var(--nav-bg)", backdropFilter: "blur(24px)", borderTop: "1px solid var(--chip-bg)", zIndex: 50 }}>
         <div className="flex w-full" style={{ maxWidth: 440 }}>
           {[
             { id: "home", label: "홈", icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M11.4576 2.20608C11.7669 1.93115 12.233 1.93115 12.5423 2.20608L21.726 10.3694C21.9003 10.5243 22 10.7463 22 10.9795V21.1836C22 21.6345 21.6345 22 21.1837 22H15.0612C14.6104 22 14.2449 21.6345 14.2449 21.1836V16.0816C14.2449 14.7977 13.2838 13.8367 12 13.8367C10.7161 13.8367 9.75505 14.7977 9.75505 16.0816V21.1836C9.75505 21.6344 9.38957 22 8.93872 22H2.81624C2.36539 22 1.99991 21.6345 1.99991 21.1836V10.9795C1.99991 10.7463 2.09962 10.5243 2.2739 10.3694L11.4576 2.20608ZM8.12239 20.3669V16.0816C8.12239 13.896 9.81441 12.204 12 12.204C14.1855 12.204 15.8775 13.896 15.8775 16.0816V20.3673H20.3673V11.3461L12 3.90842L3.63257 11.3461V20.3673L8.12239 20.3669Z" fill="currentColor"/></svg> },
