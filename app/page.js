@@ -20,9 +20,9 @@ const GLOSSARY = {
 
 // ─── Flavor Levels (대화의 맛) ───
 const FLAVOR_LEVELS = [
-  { id: "mild", label: "순한맛 🌤️", desc: "가볍게 꺼내기 좋은 수준", color: "#4CAF50" },
-  { id: "medium", label: "중간맛 🌶️", desc: "대화가 자연스럽게 깊어지는 수준", color: "#FF9800" },
-  { id: "hot", label: "매운맛 🔥", desc: "토론급 깊이, 인사이트 폭발", color: "#F44336" },
+  { id: "mild", label: "순한맛", desc: "가볍게 꺼내기 좋은 수준", color: "#4CAF50" },
+  { id: "medium", label: "중간맛", desc: "대화가 자연스럽게 깊어지는 수준", color: "#FF9800" },
+  { id: "hot", label: "매운맛", desc: "토론급 깊이, 인사이트 폭발", color: "#F44336" },
 ];
 
 // ─── News Topics with enhanced 꼬꼬무 ───
@@ -33,22 +33,22 @@ const TRENDING = [
     headline: "중동 전쟁으로 호르무즈 해협이 마비되며 브렌트유가 100달러를 돌파. 석유제품 최고가격제 시행.",
     glossaryKeys: ["호르무즈 해협", "브렌트유", "IEA", "석유제품 최고가격제"],
     keyFacts: [
-      "3월 12일 브렌트유 100달러 돌파 — 2022년 이후 처음",
-      "IEA 분석: 하루 약 800만 배럴 공급 차질 (사상 최대)",
-      "정부 대응: '석유제품 최고가격제' 3/13 전격 시행",
-      "국내 휘발유 가격 리터당 2,200원대 돌파 전망",
+      "3월 12일 브렌트유 100달러 돌파 — 2022년 러-우 전쟁 이후 처음",
+      "IEA: 하루 약 800만 배럴 공급 차질 — 걸프전(450만)의 거의 2배",
+      "정부 '석유제품 최고가격제' 3/13 전격 시행 — 한국 역사상 최초",
+      "휘발유 리터당 2,200원 전망 — 월 기름값 30만 원 시대 (출퇴근 30km 기준)",
     ],
     talkStarters: [
-      "\"요즘 기름값 때문에 차 끌기 무섭지 않아요?\"",
-      "\"석유 최고가격제라는 게 시행됐는데, 효과가 있을까요?\"",
-      "\"호르무즈 해협이 막히면 전 세계 석유 20%가 멈춘대요\"",
+      "\"주유소 갔더니 리터당 2,100원이었어요. 충격적이지 않아요?\"",
+      "\"석유 최고가격제가 한국 역사상 처음 시행된 거래요. 얼마나 심각한 건지...\"",
+      "\"기름값 때문에 대중교통으로 바꾼 사람 많다던데, 체감되세요?\"",
     ],
     flavors: {
-      mild: { starter: "\"요즘 기름값이 장난 아니에요. 주유하셨어요?\"", context: "리터당 2,200원대. 한 달 기름값이 30만 원 넘는 시대." },
-      medium: { starter: "\"석유 최고가격제라는 게 시행됐는데 효과가 있을까요?\"", context: "정부가 가격 상한선을 정했지만, 주유소 폐업 우려도 나옴. 과거 베네수엘라가 유가 통제했다가 오히려 석유 부족 사태를 겪은 사례가 있음." },
-      hot: { starter: "\"이번 유가 위기가 1973년 오일쇼크랑 비교되던데, 어떻게 보세요?\"", context: "1차 오일쇼크(1973): 유가 4배 상승 → 세계 경제 대혼란. 당시 미국은 고속도로 속도제한을 55마일로 낮추고 일요일 주유소 휴업까지 시행. 지금은 전기차와 재생에너지가 있어서 충격 흡수 능력이 다르다는 분석과, 오히려 글로벌 공급망이 더 복잡해져서 충격이 더 클 수 있다는 반론이 대립 중." },
+      mild: { starter: "\"요즘 기름값 보셨어요? 리터당 2천 원이 넘었더라고요\"", context: "출퇴근 30km 기준 월 기름값이 30만 원을 넘는 시대. '기름값 때문에 차 팔까 고민한다'는 글이 커뮤니티에서 공감을 얻고 있음." },
+      medium: { starter: "\"석유 최고가격제가 한국에서 처음 시행됐는데, 효과가 있을까요?\"", context: "정부가 주유소 판매 가격에 상한선을 걸었는데, 주유소 폐업 우려도 나옴. 베네수엘라가 유가 통제했다가 주유소에 기름이 없는 사태를 겪은 선례가 있어서, '가격 통제의 역설'이 반복될 수 있다는 우려." },
+      hot: { starter: "\"이번 위기가 1973년 오일쇼크급이라는데, 어떻게 보세요?\"", context: "1차 오일쇼크(1973): 유가 4배 폭등 → 세계 경제 대혼란. 당시 미국은 속도제한 55마일, 일요일 주유소 휴업까지 시행. 다만 지금은 전기차·재생에너지라는 대안이 있어서 '충격 흡수 능력이 다르다'는 분석 vs '글로벌 공급망이 더 복잡해져서 파급이 더 클 수 있다'는 반론이 공존." },
     },
-    followUp: ["전기차 전환이 더 빨라질까?", "유가가 라면값까지 올리는 구조는?", "한국의 전략비축유는 며칠분?"],
+    followUp: ["전기차 판매가 늘고 있을까?", "기름값이 라면값까지 올리는 구조가 뭐야?", "한국 전략비축유는 며칠분이야?"],
     updatedAt: "2026-03-17",
   },
   {
@@ -190,11 +190,11 @@ const TRENDING = [
       hot: { starter: "\"왕사남 흥행 비결이 뭘까요? 서울의 봄처럼 '시대극+감정'의 공식인 걸까요\"", context: "서울의 봄(1,312만)과 왕사남(1,346만) 모두 역사+감정 조합. 한국 관객은 '아는 역사를 새롭게 해석하는 것'에 강하게 반응. 장항준 감독: '먹자골목에 한 집만 잘되면 골목 전체에 안 좋다'는 발언이 화제." },
     },
     takMode: {
-      intro: "\"왕사남 1,300만이면 대한민국 국민 4명 중 1명이 본 건데, 안 본 3명은 뭐 하고 사는 거임? 국민의 의무 아님?\"",
+      intro: "\"1,300만이면 서울 인구보다 많은데? 안 본 사람이 오히려 소수파임. '왕사남 안 봤어요'가 아니라 '왜 안 봤어요'로 물어봐야 하는 시대\"",
       kkokkomu: [
-        "\"영화 보고 조선왕조실록 사는 사람이 3배 늘었다는 거 실화? ㅋㅋ 왕사남이 교과서보다 교육 효과가 좋은 거 아닌가. 교육부 해체하고 장항준한테 맡겨야 함\"",
-        "\"장항준이 인스타에 '22년 걸렸네' 올렸는데, 나는 22년 동안 뭐 했지 싶어서 갑자기 현타 옴. 나의 천만 관객은 언제 오는 거?\"",
-        "\"유해진이 22년 전에 '왕의 남자'도 찍고 이번에 '왕과 사는 남자'도 찍었는데, 이쯤 되면 조선 공무원 아님? 600년 근속이면 연금 얼마야\"",
+        "\"영화 보고 조선왕조실록 사는 사람이 3배 늘었대 ㅋㅋ 교육부가 10년간 못 한 걸 유해진이 2시간 만에 해결함. 예산 얼마 아낀 거야 이게\"",
+        "\"장항준이 '22년 걸렸네' 올렸는데 그 22년 동안 나는 뭐 했나 싶어서 새벽에 천장 보고 있었음. 나의 천만은 언제 오는 거지\"",
+        "\"유해진이 '왕의 남자(2005)'에도 나오고 '왕과 사는 남자(2026)'에도 나옴. 조선시대 공무원 600년 근속이면 퇴직금이 경복궁임\"",
       ],
     },
     followUp: ["올해 천만 영화 또 나올까?", "한국 관객이 사극을 좋아하는 이유?", "장항준 감독 다음 작품은?"],
@@ -223,11 +223,11 @@ const TRENDING = [
       hot: { starter: "\"BTS 광화문 공연이 공공 자원 투입 논란도 있던데, 문화 행사와 시민 불편 사이의 균형 어떻게 봐야 할까요?\"", context: "광화문 일대 교통 통제, 경찰·소방 총동원. 찬성: 글로벌 홍보 효과·관광 수입 엄청남. 반대: 도심 마비·세금 투입. 서울시는 경제 효과가 투입 비용의 수십 배라고 주장하지만, 통행 불편을 겪는 시민 입장도 있음." },
     },
     takMode: {
-      intro: "\"광화문 통행 제한이래. 세종대왕님이 한글 만들 때도 이 정도 통제는 없었을 텐데, BTS가 세종대왕 앞에서 공연하면 세종대왕도 아미 되는 거 아님?\"",
+      intro: "\"광화문 통행 제한이래. 세종대왕이 한글 반포할 때도 길 안 막았을 텐데, BTS는 도로까지 막음. 세종대왕 업적 < BTS 컴백\"",
       kkokkomu: [
-        "\"서울시가 인파 위기경보를 발령했는데, BTS 보러 가는 게 재난 수준이라는 뜻임 ㅋㅋ 콘서트가 아니라 자연재해 급\"",
-        "\"신곡이 아리랑이래. 할머니한테 말씀드렸더니 '내가 원조다' 하시면서 아리랑 부르심. 아미 가입 가능한 거?\"",
-        "\"출근길에 광화문 못 지나간다고 회사에 말했더니 재택근무 승인남. BTS 덕분에 재택 얻었으니 이게 진짜 팬서비스 아닌가\"",
+        "\"서울시가 '인파 위기경보' 발령함 ㅋㅋ BTS 콘서트가 태풍이랑 같은 등급이라는 뜻. 자연재해급 아이돌\"",
+        "\"신곡이 '아리랑'이래. 우리 할머니한테 말씀드렸더니 '내가 원조다' 하시면서 창법 시범 보여주심. 할머니 아미 가입 가능?\"",
+        "\"광화문 못 지나간다고 회사에 얘기했더니 재택근무 승인남 ㅋㅋ BTS 덕분에 재택 얻은 건 나뿐인가. 이게 진짜 팬서비스\"",
       ],
     },
     followUp: ["K-pop 경제 효과 얼마나?", "다음 월드투어 일정은?", "아리랑의 유네스코 등재 의미?"],
@@ -286,11 +286,11 @@ const TRENDING = [
       hot: { starter: "\"버터런 같은 챌린지 문화가 결국 '인증을 위한 행동'이 되는 건 아닌지, 어떻게 보세요?\"", context: "비판적 시각: SNS 인증이 목적이지 건강이 목적이 아님. 긍정적 시각: 동기가 뭐든 결과적으로 운동을 하게 만드니 좋은 것. 행동경제학의 '넛지' 이론과 연결 — 사람들은 직접적 보상(버터)이 있을 때 행동한다." },
     },
     takMode: {
-      intro: "\"10km를 뛰어서 버터를 만든다? 나는 10km 뛰면 택시비가 만들어지거든. 생산성 따지면 내가 이김\"",
+      intro: "\"10km를 뛰어서 버터를 만든다고? 그 시간에 배달 시키면 버터 3개는 옴. 하지만 '배달시킨 버터'는 인스타 감성이 안 나오잖아\"",
       kkokkomu: [
-        "\"'사 먹는 버터가 더 맛있다'는 후기 ㅋㅋㅋ 10km 뛰고 얻은 인생의 교훈이 '마트가 답이다'. 이거 자기계발서에 넣어야 함\"",
-        "\"이거 결국 SNS에 올리려고 뛰는 거잖아. '오늘 버터 만들었습니다 🧈🏃' 좋아요 200개. 마트에서 버터 사면? 좋아요 0개. 결국 좋아요가 버터보다 비싼 세상\"",
-        "\"회사에서 버터런 하자고 했더니 팀장님이 '그 시간에 보고서 하나 더 써' 하심. 맞는 말인데 왜 이렇게 슬프지. 직장인의 러닝은 퇴근 후 지하철 환승뿐\"",
+        "\"'사 먹는 버터가 더 맛있다'는 후기가 베스트임 ㅋㅋ 10km 뛰고 얻은 인생의 깨달음이 '마트가 정답이다'. 이거 자기계발서 1장이야\"",
+        "\"결국 버터가 목적이 아니라 인스타가 목적 아님? '오늘 버터 만들었습니다 🧈🏃' 좋아요 200개 vs 마트에서 버터 삼 → 좋아요 0개. 좋아요가 버터보다 비싼 세상\"",
+        "\"회사에서 '버터런 하자'고 했더니 팀장님이 '그 시간에 PPT 한 장 더 만들어'라고 함. 맞는 말인데 왜 슬프지. 직장인의 유일한 러닝은 퇴근 후 지하철 환승 뿐\"",
       ],
     },
     followUp: ["러닝 크루 추천?", "플로깅은 뭐예요?", "달리기 시작하려면 어떻게?"],
@@ -318,11 +318,11 @@ const TRENDING = [
       hot: { starter: "\"매주 로또 판매액이 1,000억인데, 이게 국민적 '희망 산업'인 건지 '합법 도박'인 건지 어떻게 보세요?\"", context: "로또 수익의 약 40%는 복권기금으로 사회에 환원. 하지만 저소득층일수록 로또 구매 비율이 높아 '가난세(poverty tax)'라는 비판도 있음. 행동경제학적으로 인간은 확률을 직관적으로 이해하지 못해 '나도 될 수 있다'는 착각에 빠지기 쉬움." },
     },
     takMode: {
-      intro: "\"로또 1등이 16명? 나는 5등도 안 되는데 16명이 동시에 1등이라고? 확률 계산 다시 해봐. 내 인생 확률이 더 희박한 거 아님?\"",
+      intro: "\"1등이 16명이면 우리 회사 한 팀이잖아. 팀 전체가 로또 맞으면 다음 날 팀장만 출근하는 거임. 상상만 해도 웃김\"",
       kkokkomu: [
-        "\"20억이면 뭐 하냐고? 일단 퇴사하고... 아 잠깐, 세후 15억인데 강남 아파트 사면 끝이네. 로또의 꿈이 '내 집 마련'이라는 게 진짜 2026년 대한민국 요약임\"",
-        "\"매주 로또 판매액이 1,000억이래. 전 국민이 매주 1,000억을 모아서 '혹시 모르니까'에 투자하는 나라. 이게 벤처 투자보다 규모가 큰 건 함정\"",
-        "\"로또 당첨자 중 상당수가 5년 내 파산한다는 통계가 있는데, 그 말은 20억을 받아도 못 지킨다는 뜻임. 근데 나는 월급도 못 지키거든. 금액만 다르고 본질은 같은 거 아닌가\"",
+        "\"20억 세후 15억인데 강남 아파트 사면 끝이래 ㅋㅋ 로또 1등의 꿈이 결국 '내 집 마련'이라는 게 2026년 대한민국 3줄 요약임\"",
+        "\"매주 로또 판매액이 1,000억이래. 전 국민이 매주 1,000억을 '혹시 모르니까'에 투자하는 나라. 이게 벤처 투자 시장보다 큰 건 함정 아닌가\"",
+        "\"당첨자 중 상당수가 5년 내 파산한다는 통계 있음. 20억을 받아도 지키지 못한다는 거잖아. 근데 나는 월급도 월말이면 사라지거든. 금액만 다르고 본질은 같음\"",
       ],
     },
     followUp: ["로또 당첨자의 평균 행복도?", "통계적으로 가장 많이 나오는 번호?", "해외 로또 시스템은?"],
@@ -345,88 +345,107 @@ function FlavorSelector({ value, onChange }) {
   );
 }
 
-function NewsCard({ topic, flavor, onFlavorChange, onBookmark, isBookmarked }) {
-  const [expanded, setExpanded] = useState(false);
-  const [takOpen, setTakOpen] = useState(false);
+function NewsCard({ topic, flavor, onFlavorChange, onBookmark, isBookmarked, onOpenSheet }) {
   const fl = topic.flavors[flavor];
   return (
-    <div className="rounded-2xl overflow-hidden transition-all" style={{ background: "var(--card-bg)", boxShadow: "var(--card-shadow)", border: "none" }}>
-      <div className="p-5">
-        <div className="flex items-center gap-2 mb-3">
-          <span className="px-2 py-0.5 rounded-md text-[10px] font-bold text-white" style={{ background: topic.badgeColor }}>{topic.badge}</span>
-          <span className="text-[10px]" style={{ color: "var(--text-muted)" }}>{topic.updatedAt}</span>
+    <div className="rounded-3xl overflow-hidden transition-all" style={{ background: "var(--card-bg)", boxShadow: "var(--card-shadow)" }}>
+      <div className="p-6">
+        <div className="flex items-center gap-2.5 mb-4">
+          <span className="px-2.5 py-1 rounded-full text-[11px] font-semibold text-white" style={{ background: topic.badgeColor }}>{topic.badge}</span>
+          <span className="text-[11px]" style={{ color: "var(--text-muted)" }}>{topic.updatedAt}</span>
         </div>
-        <div className="flex items-start gap-3 mb-3">
-          <span className="text-3xl">{topic.emoji}</span>
+        <div className="flex items-start gap-4 mb-4">
+          <span className="text-4xl mt-0.5">{topic.emoji}</span>
           <div className="flex-1">
-            <h3 className="text-base font-bold leading-snug mb-1.5" style={{ color: "var(--text)" }}>{topic.title}</h3>
-            <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>{topic.headline}</p>
+            <h3 className="text-lg font-bold leading-tight mb-2" style={{ color: "var(--text)", letterSpacing: "-0.02em" }}>{topic.title}</h3>
+            <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)", lineHeight: "1.6" }}>{topic.headline}</p>
           </div>
         </div>
-
-        {/* Flavor Selector */}
-        <div className="mb-3">
-          <p className="text-[10px] font-bold mb-1.5" style={{ color: "var(--text-muted)" }}>대화의 맛 선택</p>
+        <div className="mb-4">
+          <p className="text-xs font-semibold mb-2 tracking-wide" style={{ color: "var(--text-muted)", letterSpacing: "0.05em" }}>대화의 맛 선택</p>
           <FlavorSelector value={flavor} onChange={onFlavorChange} />
         </div>
-
-        {/* Selected Flavor Content */}
-        <div className="p-3.5 rounded-xl" style={{ background: "var(--tip-bg)", borderLeft: `3px solid ${FLAVOR_LEVELS.find(f => f.id === flavor)?.color}` }}>
-          <p className="text-xs font-bold mb-1.5" style={{ color: FLAVOR_LEVELS.find(f => f.id === flavor)?.color }}>
+        <div className="p-4 rounded-2xl" style={{ background: "rgba(245,245,247,0.6)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", border: "1px solid rgba(255,255,255,0.4)" }}>
+          <p className="text-xs font-bold mb-2" style={{ color: FLAVOR_LEVELS.find(f => f.id === flavor)?.color }}>
             💬 {FLAVOR_LEVELS.find(f => f.id === flavor)?.label} — 이렇게 시작하세요
           </p>
-          <p className="text-sm italic mb-2 leading-relaxed" style={{ color: "var(--text)" }}>{fl.starter}</p>
-          <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>{fl.context}</p>
+          <p className="text-sm mb-2.5" style={{ color: "var(--text)", lineHeight: "1.65", fontStyle: "italic" }}>{fl.starter}</p>
+          <p className="text-sm" style={{ color: "var(--text-secondary)", lineHeight: "1.65" }}>{fl.context}</p>
         </div>
-
-        {/* 꼬꼬무 더보기 CTA */}
-        <button className={`w-full mt-4 py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2 transition-all ${expanded ? "" : "kkokkomu-btn"}`}
-          style={{ background: expanded ? "var(--chip-bg)" : undefined, color: expanded ? "var(--accent)" : "#fff", boxShadow: expanded ? "none" : "0 4px 14px var(--accent-shadow)" }}
-          onClick={() => setExpanded(!expanded)}>
-          {expanded ? "접기 ↑" : (<>꼬꼬무 더보기 <span style={{ fontSize: 13 }}>↓</span></>)}
+        <button className="w-full mt-4 py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2 transition-all kkokkomu-btn"
+          style={{ color: "#fff", boxShadow: "0 4px 14px var(--accent-shadow)" }}
+          onClick={() => onOpenSheet(topic)}>
+          꼬꼬무 더보기 <span style={{ fontSize: 13 }}>↓</span>
         </button>
       </div>
+      <div className="flex" style={{ borderTop: "1px solid var(--chip-bg)" }}>
+        <button className="flex-1 py-3 text-sm font-medium flex items-center justify-center gap-1.5" style={{ color: isBookmarked ? "var(--accent)" : "var(--text-secondary)" }} onClick={() => onBookmark(topic)}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M3.19995 2.99995C3.19995 2.55812 3.55812 2.19995 3.99995 2.19995H20C20.4418 2.19995 20.7999 2.55812 20.7999 2.99995V21C20.7999 21.3106 20.6202 21.5931 20.3388 21.7246C20.0574 21.8562 19.7254 21.813 19.487 21.6139L12 15.3582L4.51289 21.6139C4.27454 21.813 3.94246 21.8562 3.6611 21.7246C3.37973 21.5931 3.19995 21.3106 3.19995 21V2.99995ZM4.79995 3.79995V19.289L11.487 13.7018C11.784 13.4537 12.2159 13.4537 12.5129 13.7018L19.2 19.289V3.79995H4.79995Z" fill="currentColor"/></svg>
+          {isBookmarked ? "저장됨" : "저장"}
+        </button>
+        <div style={{ width: 1, background: "var(--chip-bg)" }} />
+        <button className="flex-1 py-3 text-sm font-medium flex items-center justify-center gap-1.5" style={{ color: "var(--text-secondary)" }}
+          onClick={() => { const fl2 = topic.flavors[flavor]; navigator.clipboard?.writeText(`[LeTalk] ${topic.title}\n\n${fl2.starter}\n\n${fl2.context}\n\n🔗 ${topic.followUp.join(" / ")}`); }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M15.2002 5.49995C15.2002 3.67741 16.6777 2.19995 18.5002 2.19995C20.3227 2.19995 21.8002 3.67741 21.8002 5.49995C21.8002 7.32249 20.3227 8.79995 18.5002 8.79995C17.5813 8.79995 16.7502 8.42439 16.1518 7.8184L8.76439 11.5121C8.78798 11.6713 8.8002 11.8342 8.8002 12C8.8002 12.1657 8.78798 12.3286 8.76439 12.4878L16.1518 16.1815C16.7502 15.5755 17.5813 15.2 18.5002 15.2C20.3227 15.2 21.8002 16.6774 21.8002 18.5C21.8002 20.3225 20.3227 21.7999 18.5002 21.7999C16.6777 21.7999 15.2002 20.3225 15.2002 18.5C15.2002 18.1742 15.2474 17.8594 15.3354 17.5621L8.14877 13.9688C7.54724 14.7767 6.58483 15.3 5.5002 15.3C3.67766 15.3 2.2002 13.8225 2.2002 12C2.2002 10.1774 3.67766 8.69995 5.5002 8.69995C6.58482 8.69995 7.54724 9.22322 8.14876 10.0311L15.3354 6.43778C15.2474 6.14051 15.2002 5.82574 15.2002 5.49995ZM18.5002 3.79995C17.5613 3.79995 16.8002 4.56107 16.8002 5.49995C16.8002 6.43884 17.5613 7.19995 18.5002 7.19995C19.4391 7.19995 20.2002 6.43884 20.2002 5.49995C20.2002 4.56107 19.4391 3.79995 18.5002 3.79995ZM18.5002 16.8C17.5613 16.8 16.8002 17.5611 16.8002 18.5C16.8002 19.4388 17.5613 20.2 18.5002 20.2C19.4391 20.2 20.2002 19.4388 20.2002 18.5C20.2002 17.5611 19.4391 16.8 18.5002 16.8ZM3.8002 12C3.8002 11.0611 4.56131 10.3 5.5002 10.3C6.43908 10.3 7.2002 11.0611 7.2002 12C7.2002 12.9388 6.43908 13.7 5.5002 13.7C4.56131 13.7 3.8002 12.9388 3.8002 12Z" fill="currentColor"/></svg>
+          공유
+        </button>
+      </div>
+    </div>
+  );
+}
 
-      <div className="overflow-hidden transition-all duration-400" style={{ maxHeight: expanded ? "3000px" : "0", opacity: expanded ? 1 : 0 }}>
-        <div className="px-5 pb-5 space-y-3">
-
-          {/* 핵심 팩트 */}
+// ─── Bottom Sheet (토스 스타일) ───
+function BottomSheet({ topic, onClose }) {
+  const [takOpen, setTakOpen] = useState(false);
+  if (!topic) return null;
+  return (
+    <div style={{ position: "fixed", inset: 0, zIndex: 100, animation: "dimIn 0.2s ease" }}>
+      <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.45)", backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)" }} onClick={onClose} />
+      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, maxHeight: "85vh", borderRadius: "24px 24px 0 0", background: "var(--card-bg)", boxShadow: "0 -8px 40px rgba(0,0,0,0.15)", animation: "sheetUp 0.35s cubic-bezier(0.22,1,0.36,1)", overflowY: "auto", WebkitOverflowScrolling: "touch" }}>
+        <div className="flex justify-center pt-3 pb-1 sticky top-0" style={{ background: "var(--card-bg)", borderRadius: "24px 24px 0 0", zIndex: 2 }}>
+          <div style={{ width: 36, height: 5, borderRadius: 3, background: "var(--text-muted)", opacity: 0.25 }} />
+        </div>
+        <div className="px-6 pb-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <span className="text-3xl">{topic.emoji}</span>
+            <div>
+              <h3 className="text-base font-bold" style={{ color: "var(--text)", letterSpacing: "-0.02em" }}>{topic.title}</h3>
+              <p className="text-xs mt-0.5" style={{ color: "var(--text-muted)" }}>꼬꼬무 더보기</p>
+            </div>
+          </div>
+          <button className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: "var(--chip-bg)" }} onClick={onClose}>
+            <span style={{ color: "var(--text-secondary)", fontSize: 16, fontWeight: 700 }}>✕</span>
+          </button>
+        </div>
+        <div className="px-6 pb-10 space-y-4">
           {topic.keyFacts?.length > 0 && (
-            <div className="p-3.5 rounded-xl" style={{ background: "var(--tip-bg)" }}>
-              <p className="text-xs font-bold mb-2" style={{ color: "var(--accent)" }}>📌 핵심 팩트</p>
+            <div className="p-4 rounded-2xl" style={{ background: "var(--chip-bg)" }}>
+              <p className="text-xs font-bold mb-3" style={{ color: "var(--accent)", letterSpacing: "0.03em" }}>📌 핵심 팩트</p>
               {topic.keyFacts.map((f, i) => (
-                <p key={i} className="text-sm mb-1.5 leading-relaxed" style={{ color: "var(--text)" }}>• {f}</p>
+                <p key={i} className="text-sm mb-2" style={{ color: "var(--text)", lineHeight: "1.6" }}>• {f}</p>
               ))}
             </div>
           )}
-
-          {/* 이렇게 말해보세요 */}
           {topic.talkStarters?.length > 0 && (
-            <div className="p-3.5 rounded-xl" style={{ background: "rgba(46,125,50,0.05)", border: "1px solid rgba(46,125,50,0.12)" }}>
-              <p className="text-xs font-bold mb-2" style={{ color: "#2E7D32" }}>💬 이렇게 말해보세요</p>
+            <div className="p-4 rounded-2xl" style={{ background: "rgba(46,125,50,0.04)" }}>
+              <p className="text-xs font-bold mb-3" style={{ color: "#2E7D32", letterSpacing: "0.03em" }}>💬 이렇게 말해보세요</p>
               {topic.talkStarters.map((s, i) => (
-                <p key={i} className="text-sm mb-1.5 leading-relaxed italic" style={{ color: "var(--text)" }}>{s}</p>
+                <p key={i} className="text-sm mb-2" style={{ color: "var(--text)", lineHeight: "1.6", fontStyle: "italic" }}>{s}</p>
               ))}
             </div>
           )}
-
-          {/* 꼬꼬무 후속 질문 */}
           <div>
-            <p className="text-xs font-bold mb-2" style={{ color: "var(--text-muted)" }}>🔗 꼬꼬무 — 이렇게 이어가세요</p>
-            <div className="flex flex-wrap gap-1.5">
+            <p className="text-xs font-bold mb-3" style={{ color: "var(--text-muted)", letterSpacing: "0.03em" }}>🔗 꼬꼬무 — 이렇게 이어가세요</p>
+            <div className="flex flex-wrap gap-2">
               {topic.followUp.map((f, i) => (
-                <span key={i} className="px-2.5 py-1.5 rounded-lg text-xs" style={{ background: "var(--chip-bg)", border: "1px solid var(--border)", color: "var(--text-secondary)" }}>{f}</span>
+                <span key={i} className="px-3 py-2 rounded-full text-xs font-medium" style={{ background: "var(--chip-bg)", color: "var(--text-secondary)" }}>{f}</span>
               ))}
             </div>
           </div>
-
-          {/* 어려운 용어 */}
           {topic.glossaryKeys?.length > 0 && (
-            <div className="p-3.5 rounded-xl" style={{ background: "linear-gradient(135deg, rgba(103,58,183,0.05), rgba(103,58,183,0.1))", border: "1px solid rgba(103,58,183,0.15)" }}>
-              <p className="text-xs font-bold mb-2.5 flex items-center gap-1.5" style={{ color: "#5E35B1" }}>
-                <span style={{ fontSize: 14 }}>📖</span> 이 뉴스의 어려운 용어
-              </p>
-              <div className="space-y-2.5">
+            <div className="p-4 rounded-2xl" style={{ background: "rgba(103,58,183,0.04)", border: "1px solid rgba(103,58,183,0.1)" }}>
+              <p className="text-xs font-bold mb-3 flex items-center gap-1.5" style={{ color: "#5E35B1", letterSpacing: "0.03em" }}>📖 이 뉴스의 어려운 용어</p>
+              <div className="space-y-3">
                 {topic.glossaryKeys.map(k => GLOSSARY[k] && (
                   <div key={k}>
                     <span className="inline-block text-xs font-bold px-2 py-0.5 rounded mb-1" style={{ background: "rgba(103,58,183,0.12)", color: "#5E35B1" }}>{k}</span>
@@ -436,8 +455,6 @@ function NewsCard({ topic, flavor, onFlavorChange, onBookmark, isBookmarked }) {
               </div>
             </div>
           )}
-
-          {/* 감다살 드립 모드 — 재미 카테고리만 */}
           {topic.takMode && (
             <div>
               <button className="w-full py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 transition-all"
@@ -446,30 +463,19 @@ function NewsCard({ topic, flavor, onFlavorChange, onBookmark, isBookmarked }) {
                 😎 감다살 드립 모드 {takOpen ? "OFF" : "ON"}
               </button>
               {takOpen && (
-                <div className="mt-2 p-4 rounded-xl" style={{ background: "linear-gradient(135deg, rgba(255,111,0,0.06), rgba(255,179,0,0.1))", border: "1px solid rgba(255,179,0,0.2)", animation: "fadeIn 0.3s" }}>
+                <div className="mt-3 p-5 rounded-2xl" style={{ background: "rgba(255,179,0,0.06)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", border: "1px solid rgba(255,179,0,0.15)", animation: "fadeIn 0.3s" }}>
+                  <p className="text-[10px] mb-3 px-3 py-1.5 rounded-full inline-block" style={{ background: "rgba(255,111,0,0.1)", color: "#E65100" }}>⚡ 재미 요소로만 봐주세요 — 실제 정보와 다를 수 있습니다</p>
                   <p className="text-xs font-bold mb-2" style={{ color: "#E65100" }}>😎 이렇게 꺼내면 감다살</p>
-                  <p className="text-sm italic mb-3 leading-relaxed" style={{ color: "var(--text)" }}>{topic.takMode.intro}</p>
+                  <p className="text-sm italic mb-3" style={{ color: "var(--text)", lineHeight: "1.65" }}>{topic.takMode.intro}</p>
                   <p className="text-xs font-bold mb-2" style={{ color: "#FF6F00" }}>🔥 감다살 꼬꼬무 드립</p>
                   {topic.takMode.kkokkomu.map((k, i) => (
-                    <p key={i} className="text-sm mb-2 leading-relaxed" style={{ color: "var(--text-secondary)" }}>{k}</p>
+                    <p key={i} className="text-sm mb-2.5" style={{ color: "var(--text-secondary)", lineHeight: "1.65" }}>{k}</p>
                   ))}
                 </div>
               )}
             </div>
           )}
         </div>
-      </div>
-      <div className="flex" style={{ borderTop: "1px solid var(--chip-bg)" }}>
-        <button className="flex-1 py-3 text-sm font-medium flex items-center justify-center gap-1.5" style={{ color: isBookmarked ? "var(--accent)" : "var(--text-secondary)" }} onClick={() => onBookmark(topic)}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M2.79726 4.80739C5.11177 2.39754 8.90702 2.39754 11.2215 4.80739L11.2224 4.80827L11.9872 5.60702L12.7529 4.80739C15.0674 2.39754 18.8626 2.39754 21.1772 4.80739L21.179 4.80935C23.5242 7.26774 23.1318 10.953 21.2363 13.4384L21.2351 13.44C19.3267 15.9292 17.1219 17.9359 15.4019 19.3169C14.5402 20.0088 13.796 20.547 13.2653 20.9135C12.9998 21.0968 12.7875 21.2373 12.6402 21.3328C12.5666 21.3805 12.5092 21.417 12.4695 21.442L12.4235 21.4708L12.4109 21.4786L12.4072 21.4809L12.406 21.4816C12.406 21.4816 12.4053 21.4821 11.9872 20.8C11.5813 21.4894 11.5809 21.4892 11.5809 21.4892L11.5792 21.4882L11.5754 21.4859L11.5621 21.478L11.5142 21.4491C11.4729 21.424 11.4132 21.3875 11.3368 21.3396C11.184 21.244 10.964 21.1033 10.6902 20.9197C10.1426 20.5527 9.37805 20.0137 8.50199 19.3205C6.75443 17.9378 4.54128 15.9246 2.72667 13.423L2.72566 13.4216C0.930009 10.935 0.438148 7.26368 2.79726 4.80739ZM11.9872 20.8L11.5809 21.4892C11.8358 21.6393 12.1538 21.6362 12.406 21.4816L11.9872 20.8ZM11.9794 19.8524C12.0866 19.7811 12.2129 19.6958 12.3562 19.5968C12.8601 19.2489 13.5728 18.7336 14.4002 18.0693C16.058 16.7382 18.1594 14.8219 19.9646 12.4675C21.5249 10.421 21.6753 7.64872 20.0223 5.91478C18.3375 4.16154 15.5917 4.16174 13.9071 5.91539L12.565 7.31704C12.4141 7.47464 12.2054 7.56376 11.9872 7.56376C11.769 7.56376 11.5603 7.47464 11.4094 7.31704L10.0676 5.91571C8.38268 4.16167 5.63602 4.16151 3.95122 5.91571C2.31111 7.62338 2.50465 10.382 4.02235 12.4843C5.72139 14.8264 7.81446 16.7363 9.49477 18.0658C10.3327 18.7288 11.0626 19.2432 11.5809 19.5906C11.7329 19.6925 11.8666 19.7799 11.9794 19.8524Z" fill="currentColor"/></svg>
-          {isBookmarked ? "저장됨" : "저장"}
-        </button>
-        <div style={{ width: 1, background: "var(--chip-bg)" }} />
-        <button className="flex-1 py-3 text-sm font-medium flex items-center justify-center gap-1.5" style={{ color: "var(--text-secondary)" }}
-          onClick={() => { const fl2 = topic.flavors[flavor]; navigator.clipboard?.writeText(`[LeTalk] ${topic.title}\n\n${fl2.starter}\n\n${fl2.context}\n\n🔗 ${topic.followUp.join(" / ")}`); }}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M15.2002 5.49995C15.2002 3.67741 16.6777 2.19995 18.5002 2.19995C20.3227 2.19995 21.8002 3.67741 21.8002 5.49995C21.8002 7.32249 20.3227 8.79995 18.5002 8.79995C17.5813 8.79995 16.7502 8.42439 16.1518 7.8184L8.76439 11.5121C8.78798 11.6713 8.8002 11.8342 8.8002 12C8.8002 12.1657 8.78798 12.3286 8.76439 12.4878L16.1518 16.1815C16.7502 15.5755 17.5813 15.2 18.5002 15.2C20.3227 15.2 21.8002 16.6774 21.8002 18.5C21.8002 20.3225 20.3227 21.7999 18.5002 21.7999C16.6777 21.7999 15.2002 20.3225 15.2002 18.5C15.2002 18.1742 15.2474 17.8594 15.3354 17.5621L8.14877 13.9688C7.54724 14.7767 6.58483 15.3 5.5002 15.3C3.67766 15.3 2.2002 13.8225 2.2002 12C2.2002 10.1774 3.67766 8.69995 5.5002 8.69995C6.58482 8.69995 7.54724 9.22322 8.14876 10.0311L15.3354 6.43778C15.2474 6.14051 15.2002 5.82574 15.2002 5.49995ZM18.5002 3.79995C17.5613 3.79995 16.8002 4.56107 16.8002 5.49995C16.8002 6.43884 17.5613 7.19995 18.5002 7.19995C19.4391 7.19995 20.2002 6.43884 20.2002 5.49995C20.2002 4.56107 19.4391 3.79995 18.5002 3.79995ZM18.5002 16.8C17.5613 16.8 16.8002 17.5611 16.8002 18.5C16.8002 19.4388 17.5613 20.2 18.5002 20.2C19.4391 20.2 20.2002 19.4388 20.2002 18.5C20.2002 17.5611 19.4391 16.8 18.5002 16.8ZM3.8002 12C3.8002 11.0611 4.56131 10.3 5.5002 10.3C6.43908 10.3 7.2002 11.0611 7.2002 12C7.2002 12.9388 6.43908 13.7 5.5002 13.7C4.56131 13.7 3.8002 12.9388 3.8002 12Z" fill="currentColor"/></svg>
-          공유
-        </button>
       </div>
     </div>
   );
@@ -498,6 +504,7 @@ export default function LeTalk() {
   const [bookmarks, setBookmarks] = useState([]);
   const [newsFilter, setNewsFilter] = useState("all");
   const [flavorMap, setFlavorMap] = useState({});
+  const [sheetTopic, setSheetTopic] = useState(null);
 
   const getFlavor = (id) => flavorMap[id] || "mild";
   const setFlavor = (id, f) => setFlavorMap(prev => ({ ...prev, [id]: f }));
@@ -509,56 +516,68 @@ export default function LeTalk() {
   const filtered = newsFilter === "all" ? TRENDING : TRENDING.filter(n => n.badge === badgeMap[newsFilter]);
 
   const theme = darkMode ? {
-    "--bg": "#0c0c12", "--card-bg": "#181824", "--text": "#f0f0f5", "--text-secondary": "#9898b0",
-    "--text-muted": "#58586e", "--accent": "#ff6b6b", "--accent-light": "#ff8e8e",
-    "--accent-shadow": "rgba(255,107,107,0.2)", "--border": "#252538", "--chip-bg": "#1c1c2c",
-    "--tip-bg": "rgba(255,107,107,0.05)", "--nav-bg": "rgba(12,12,18,0.95)",
+    "--bg": "#000000", "--card-bg": "#1c1c1e", "--text": "#f5f5f7", "--text-secondary": "#a1a1a6",
+    "--text-muted": "#636366", "--accent": "#d4453b", "--accent-light": "#e8685e",
+    "--accent-shadow": "rgba(212,69,59,0.25)", "--border": "#2c2c2e", "--chip-bg": "#2c2c2e",
+    "--tip-bg": "rgba(212,69,59,0.06)", "--nav-bg": "rgba(0,0,0,0.85)",
     "--card-shadow": "none",
   } : {
-    "--bg": "#f4f5f7", "--card-bg": "#ffffff", "--text": "#191f28", "--text-secondary": "#4e5968",
-    "--text-muted": "#8b95a1", "--accent": "#d4453b", "--accent-light": "#e8685e",
-    "--accent-shadow": "rgba(212,69,59,0.12)", "--border": "#f2f3f5", "--chip-bg": "#f2f3f5",
-    "--tip-bg": "rgba(212,69,59,0.03)", "--nav-bg": "rgba(255,255,255,0.97)",
-    "--card-shadow": "0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02)",
+    "--bg": "#ffffff", "--card-bg": "#ffffff", "--text": "#1d1d1f", "--text-secondary": "#6e6e73",
+    "--text-muted": "#aeaeb2", "--accent": "#d4453b", "--accent-light": "#e8685e",
+    "--accent-shadow": "rgba(212,69,59,0.15)", "--border": "#f5f5f7", "--chip-bg": "#f5f5f7",
+    "--tip-bg": "rgba(212,69,59,0.03)", "--nav-bg": "rgba(255,255,255,0.8)",
+    "--card-shadow": "0 2px 12px rgba(0,0,0,0.06)",
   };
 
   return (
-    <div style={{ ...theme, background: "var(--bg)", minHeight: "100vh", fontFamily: "'Pretendard', -apple-system, sans-serif" }}>
+    <div style={{ ...theme, background: "var(--bg)", minHeight: "100vh", fontFamily: "-apple-system, 'SF Pro Display', 'Pretendard', BlinkMacSystemFont, sans-serif", WebkitFontSmoothing: "antialiased" }}>
       <style>{`
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-        @keyframes slideUp { from { opacity:0; transform:translateY(16px) } to { opacity:1; transform:translateY(0) } }
+        @keyframes slideUp { from { opacity:0; transform:translateY(20px) } to { opacity:1; transform:translateY(0) } }
         @keyframes fadeIn { from { opacity:0 } to { opacity:1 } }
         @keyframes gradientFlow {
           0% { background-position: 0% 50%; }
+          25% { background-position: 50% 100%; }
           50% { background-position: 100% 50%; }
+          75% { background-position: 50% 0%; }
           100% { background-position: 0% 50%; }
         }
-        .kkokkomu-btn {
-          background: linear-gradient(270deg, #d4453b, #ff6b8a, #e8685e, #d4453b);
-          background-size: 300% 300%;
-          animation: gradientFlow 3s ease infinite;
+        @keyframes sheetUp {
+          from { transform: translateY(100%); }
+          to { transform: translateY(0); }
         }
-        .kkokkomu-btn:active { transform: scale(0.97); }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        @keyframes dimIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .kkokkomu-btn {
+          background: linear-gradient(270deg, #d4453b, #ff4081, #ff6b8a, #e8685e, #ff8a65, #d4453b);
+          background-size: 400% 400%;
+          animation: gradientFlow 2s ease infinite;
+          box-shadow: 0 4px 20px rgba(212,69,59,0.3);
+        }
+        .kkokkomu-btn:hover { box-shadow: 0 6px 28px rgba(212,69,59,0.4); }
+        .kkokkomu-btn:active { transform: scale(0.96); }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
         button { cursor: pointer; border: none; background: none; font-family: inherit; }
       `}</style>
 
-      <div className="mx-auto" style={{ maxWidth: 440, paddingBottom: 80 }}>
+      <div className="mx-auto" style={{ maxWidth: 460, paddingBottom: 90 }}>
 
         {/* HOME */}
         {screen === "home" && (
-          <div className="px-5 pt-12 pb-6" style={{ animation: "fadeIn 0.4s" }}>
+          <div className="px-6 pt-14 pb-6" style={{ animation: "fadeIn 0.4s" }}>
             {/* Header */}
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between mb-8">
               <div>
-                <h1 className="text-3xl font-black tracking-tight" style={{ color: "var(--text)" }}>
+                <h1 className="text-4xl font-black tracking-tight" style={{ color: "var(--text)", letterSpacing: "-0.03em" }}>
                   Le<span style={{ color: "var(--accent)" }}>Talk</span>
                 </h1>
-                <p className="text-sm mt-1" style={{ color: "var(--text-muted)" }}>대화의 맛을 더하다</p>
-                <p className="text-[10px] mt-1" style={{ color: "var(--text-muted)", opacity: 0.6 }}>제작자 : 이상현(le_sh7)</p>
+                <p className="text-base mt-1.5" style={{ color: "var(--text-muted)" }}>대화의 맛을 더하다</p>
+                <p className="text-[10px] mt-1" style={{ color: "var(--text-muted)", opacity: 0.5 }}>제작자 : 이상현(le_sh7)</p>
               </div>
               <button className="flex items-center gap-2 px-4 py-2 rounded-full transition-all"
-                style={{ background: "var(--card-bg)", boxShadow: "0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06)", color: "var(--text-secondary)" }}
+                style={{ background: "rgba(255,255,255,0.6)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)", boxShadow: "0 1px 4px rgba(0,0,0,0.06), inset 0 0 0 1px rgba(255,255,255,0.5)", color: "var(--text-secondary)" }}
                 onClick={() => setDarkMode(!darkMode)}>
                 <span style={{ fontSize: 16 }}>{darkMode ? "🌞" : "🌙"}</span>
                 <span className="text-xs font-medium">{darkMode ? "라이트" : "다크"}</span>
@@ -566,17 +585,17 @@ export default function LeTalk() {
             </div>
 
             {/* Concept Banner */}
-            <div className="p-5 rounded-2xl mb-6" style={{ background: "linear-gradient(135deg, var(--accent), var(--accent-light))", boxShadow: "0 4px 16px var(--accent-shadow)" }}>
-              <p className="text-white text-base font-bold mb-1">대화의 맛을 골라보세요</p>
+            <div className="p-6 rounded-3xl mb-8" style={{ background: "linear-gradient(135deg, rgba(212,69,59,0.9), rgba(232,104,94,0.9))", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", boxShadow: "0 8px 32px var(--accent-shadow)" }}>
+              <p className="text-white text-lg font-bold mb-1.5" style={{ letterSpacing: "-0.01em" }}>대화의 맛을 골라보세요</p>
               <p className="text-white text-xs opacity-90 leading-relaxed">같은 뉴스도 순한맛·중간맛·매운맛으로 다르게 꺼낼 수 있어요. 상대방과의 관계, 분위기에 맞는 깊이를 선택하세요.</p>
             </div>
 
             {/* Filter */}
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-bold" style={{ color: "var(--text)" }}>🔥 이번 주 대화 주제</h2>
+            <div className="flex items-center justify-between mb-5">
+              <h2 className="text-xl font-bold" style={{ color: "var(--text)", letterSpacing: "-0.02em" }}>이번 주 대화 주제</h2>
               <span className="text-[10px] px-2 py-0.5 rounded-full" style={{ background: "var(--tip-bg)", color: "var(--accent)" }}>3/4 ~ 3/18</span>
             </div>
-            <div className="flex gap-1.5 mb-4 overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
+            <div className="flex gap-2 mb-6 overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
               {[{ id: "all", l: "전체" }, { id: "fun", l: "재미" }, { id: "economy", l: "경제" }, { id: "intl", l: "국제" }, { id: "tech", l: "기술" }, { id: "trend", l: "트렌드" }, { id: "society", l: "사회" }].map(f => (
                 <button key={f.id} className="px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all" onClick={() => setNewsFilter(f.id)}
                   style={{ background: newsFilter === f.id ? "var(--accent)" : "var(--card-bg)", color: newsFilter === f.id ? "#fff" : "var(--text-muted)", boxShadow: newsFilter === f.id ? "0 2px 8px var(--accent-shadow)" : "var(--card-shadow)" }}>
@@ -586,10 +605,10 @@ export default function LeTalk() {
             </div>
 
             {/* News Cards */}
-            <div className="space-y-4">
+            <div className="space-y-5">
               {filtered.map((t, i) => (
                 <div key={t.id} style={{ animation: `slideUp 0.4s ease-out ${i * 80}ms both` }}>
-                  <NewsCard topic={t} flavor={getFlavor(t.id)} onFlavorChange={(f) => setFlavor(t.id, f)} onBookmark={toggleBookmark} isBookmarked={isBookmarked(t)} />
+                  <NewsCard topic={t} flavor={getFlavor(t.id)} onFlavorChange={(f) => setFlavor(t.id, f)} onBookmark={toggleBookmark} isBookmarked={isBookmarked(t)} onOpenSheet={setSheetTopic} />
                 </div>
               ))}
             </div>
@@ -613,7 +632,7 @@ export default function LeTalk() {
             ) : (
               <div className="space-y-4">
                 {bookmarks.map(t => (
-                  <NewsCard key={t.id} topic={t} flavor={getFlavor(t.id)} onFlavorChange={(f) => setFlavor(t.id, f)} onBookmark={toggleBookmark} isBookmarked={true} />
+                  <NewsCard key={t.id} topic={t} flavor={getFlavor(t.id)} onFlavorChange={(f) => setFlavor(t.id, f)} onBookmark={toggleBookmark} isBookmarked={true} onOpenSheet={setSheetTopic} />
                 ))}
               </div>
             )}
@@ -640,9 +659,12 @@ export default function LeTalk() {
         )}
       </div>
 
+      {/* Bottom Sheet */}
+      {sheetTopic && <BottomSheet topic={sheetTopic} onClose={() => setSheetTopic(null)} />}
+
       {/* Nav */}
-      <div className="fixed bottom-0 left-0 right-0 flex justify-center" style={{ background: "var(--nav-bg)", backdropFilter: "blur(24px)", borderTop: "1px solid var(--chip-bg)", zIndex: 50 }}>
-        <div className="flex w-full" style={{ maxWidth: 440 }}>
+      <div className="fixed bottom-0 left-0 right-0 flex justify-center" style={{ background: "rgba(255,255,255,0.65)", backdropFilter: "saturate(180%) blur(24px)", WebkitBackdropFilter: "saturate(180%) blur(24px)", borderTop: "1px solid rgba(255,255,255,0.3)", zIndex: 50 }}>
+        <div className="flex w-full" style={{ maxWidth: 460 }}>
           {[
             { id: "home", label: "홈", icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M11.4576 2.20608C11.7669 1.93115 12.233 1.93115 12.5423 2.20608L21.726 10.3694C21.9003 10.5243 22 10.7463 22 10.9795V21.1836C22 21.6345 21.6345 22 21.1837 22H15.0612C14.6104 22 14.2449 21.6345 14.2449 21.1836V16.0816C14.2449 14.7977 13.2838 13.8367 12 13.8367C10.7161 13.8367 9.75505 14.7977 9.75505 16.0816V21.1836C9.75505 21.6344 9.38957 22 8.93872 22H2.81624C2.36539 22 1.99991 21.6345 1.99991 21.1836V10.9795C1.99991 10.7463 2.09962 10.5243 2.2739 10.3694L11.4576 2.20608ZM8.12239 20.3669V16.0816C8.12239 13.896 9.81441 12.204 12 12.204C14.1855 12.204 15.8775 13.896 15.8775 16.0816V20.3673H20.3673V11.3461L12 3.90842L3.63257 11.3461V20.3673L8.12239 20.3669Z" fill="currentColor"/></svg> },
             { id: "glossary", label: "용어사전", icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M12.4999 3.79995C17.3834 3.79995 21.1999 7.35812 21.1999 11.5806C21.1999 14.0038 19.9579 16.1907 17.9683 17.6313C17.7605 17.7817 17.6374 18.0227 17.6374 18.2793V20.5712C17.5254 20.503 17.4098 20.4329 17.2927 20.3622C16.5007 19.8835 15.5575 19.3227 15.2064 19.1628C15.0459 19.0897 14.8656 19.0717 14.6938 19.1117C13.9939 19.2744 13.2589 19.3612 12.4999 19.3612C7.61652 19.3612 3.79995 15.8031 3.79995 11.5806C3.79995 7.35812 7.61652 3.79995 12.4999 3.79995ZM18.0162 22.6801C18.263 22.8329 18.5731 22.8401 18.8267 22.6989C19.0803 22.5577 19.2374 22.2902 19.2374 22V18.6773C21.4039 16.9699 22.7999 14.4342 22.7999 11.5806C22.7999 6.32515 18.1099 2.19995 12.4999 2.19995C6.88997 2.19995 2.19995 6.32515 2.19995 11.5806C2.19995 16.836 6.88997 20.9612 12.4999 20.9612C13.2774 20.9612 14.0357 20.8827 14.7654 20.7336C15.1332 20.9345 15.7982 21.3284 16.465 21.7315C16.8711 21.9769 17.2591 22.2142 17.5457 22.3902C17.6889 22.4781 17.8067 22.5507 17.8886 22.6012L18.0162 22.6801Z" fill="currentColor"/><path fillRule="evenodd" clipRule="evenodd" d="M7.82497 9.99995C7.82497 9.55812 8.18315 9.19995 8.62497 9.19995H16.5C16.9418 9.19995 17.3 9.55812 17.3 9.99995C17.3 10.4418 16.9418 10.8 16.5 10.8H8.62497C8.18315 10.8 7.82497 10.4418 7.82497 9.99995Z" fill="currentColor"/><path fillRule="evenodd" clipRule="evenodd" d="M7.82497 13.5C7.82497 13.0581 8.18315 12.7 8.62497 12.7H16.5C16.9418 12.7 17.3 13.0581 17.3 13.5C17.3 13.9418 16.9418 14.3 16.5 14.3H8.62497C8.18315 14.3 7.82497 13.9418 7.82497 13.5Z" fill="currentColor"/></svg> },
