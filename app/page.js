@@ -375,7 +375,7 @@ function NewsCard({ topic, flavor, onFlavorChange, onBookmark, isBookmarked, onO
         <button className="w-full mt-4 py-3.5 rounded-2xl text-sm font-bold flex items-center justify-center gap-2 transition-all kkokkomu-btn"
           style={{ color: "#fff", boxShadow: "0 4px 14px var(--accent-shadow)" }}
           onClick={() => onOpenSheet(topic)}>
-          꼬꼬무 더보기 <span style={{ fontSize: 13 }}>↓</span>
+          꼬꼬무 더보기
         </button>
       </div>
       <div className="flex" style={{ borderTop: "1px solid var(--chip-bg)" }}>
@@ -522,7 +522,7 @@ export default function LeTalk() {
     "--tip-bg": "rgba(212,69,59,0.06)", "--nav-bg": "rgba(0,0,0,0.85)",
     "--card-shadow": "none",
   } : {
-    "--bg": "#ffffff", "--card-bg": "#ffffff", "--text": "#1d1d1f", "--text-secondary": "#6e6e73",
+    "--bg": "#F2F4F6", "--card-bg": "#ffffff", "--text": "#1d1d1f", "--text-secondary": "#6e6e73",
     "--text-muted": "#aeaeb2", "--accent": "#d4453b", "--accent-light": "#e8685e",
     "--accent-shadow": "rgba(212,69,59,0.15)", "--border": "#f5f5f7", "--chip-bg": "#f5f5f7",
     "--tip-bg": "rgba(212,69,59,0.03)", "--nav-bg": "rgba(255,255,255,0.8)",
