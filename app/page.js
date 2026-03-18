@@ -22,7 +22,7 @@ const GLOSSARY = {
 const FLAVOR_LEVELS = [
   { id: "mild", label: "순한맛", desc: "가볍게 꺼내기 좋은 수준", color: "#4CAF50" },
   { id: "medium", label: "중간맛", desc: "대화가 자연스럽게 깊어지는 수준", color: "#FF9800" },
-  { id: "hot", label: "매운맛", desc: "토론급 깊이, 인사이트 폭발", color: "#F44336" },
+  { id: "hot", label: "깊은맛", desc: "토론급 깊이, 인사이트 폭발", color: "#F44336" },
 ];
 
 // ─── Topics Database ───
@@ -693,8 +693,8 @@ export default function LeTalk() {
             {/* Header */}
             <div className="flex items-center justify-between mb-8">
               <div>
-                <h1 className="text-4xl font-black tracking-tight" style={{ color: "var(--text)", letterSpacing: "-0.02em", fontFamily: "'Playfair Display', Georgia, serif" }}>
-                  Le<span style={{ color: "var(--accent)" }}>Talk</span>
+                <h1 className="text-4xl font-black tracking-tight" style={{ color: "var(--text)", letterSpacing: "-0.02em" }}>
+                  le<span style={{ color: "var(--accent)" }}>Talk</span>
                 </h1>
                 <p className="text-base mt-1.5" style={{ color: "var(--text-muted)" }}>대화의 맛을 더하다</p>
                 <p className="text-[10px] mt-1" style={{ color: "var(--text-muted)", opacity: 0.5 }}>제작자 : 이상현(le_sh7)</p>
